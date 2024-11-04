@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name = 'UFCQC/PianoAnalytics'
+    s.name = 'PianoAnalytics'
     s.version = '3.1.8'
     s.summary = 'Piano Analytics library for Apple devices'
     s.homepage = 'https://github.com/quechoisir/piano-analytics-apple'
