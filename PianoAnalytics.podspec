@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
-    s.name = 'PianoAnalytics'
-    s.version = '3.1.7'
+    s.name = 'UFCQC/PianoAnalytics'
+    s.version = '3.1.8'
     s.summary = 'Piano Analytics library for Apple devices'
-    s.homepage = 'https://github.com/at-internet/piano-analytics-apple'
+    s.homepage = 'https://github.com/quechoisir/piano-analytics-apple'
     s.documentation_url = 'https://developers.atinternet-solutions.com/piano-analytics'
     s.license = 'MIT'
     s.author = 'Piano Analytics'
     s.requires_arc = true
-    s.source = { :git => 'https://github.com/at-internet/piano-analytics-apple.git', :tag => s.version}
+    s.source = { :git => 'https://github.com/quechoisir/piano-analytics-apple', :tag => s.version}
     s.dependency 'PianoConsents', ">= 1.0"
     s.module_name = 'PianoAnalytics'
     s.ios.deployment_target = '10.0'
