@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/quechoisir/piano-analytics-apple.git', :tag => s.version}
     s.dependency 'PianoConsents', ">= 1.0"
     s.module_name = 'PianoAnalytics'
-    s.ios.deployment_target = '10.0'
-    s.tvos.deployment_target = '10.0'
+    s.ios.deployment_target = '12.0'
+    s.tvos.deployment_target = '12.0'
     s.watchos.deployment_target = '3.0'
     s.swift_versions = '5'
 
