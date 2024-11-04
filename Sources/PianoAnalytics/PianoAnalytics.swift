@@ -25,7 +25,7 @@
 
 import Foundation
 
-//public let pa = PianoAnalytics.shared
+public let pa = PianoAnalytics.shared
 
 @objc public class PianoAnalyticsWrapper: NSObject {
     @objc public func pa() -> PianoAnalytics { return PianoAnalytics.shared }
