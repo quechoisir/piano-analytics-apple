@@ -32,23 +32,5 @@ Pod::Spec.new do |s|
             "PianoAnalytics_appExtension" => ["Sources/PianoAnalytics/Resources/*.xcprivacy"]
         }
         appExt.resource = 'Sources/PianoAnalytics/Resources/*.json'
-    end
-
-    s.subspec 'watchOS' do |wos|
-        wos.source_files = 'Sources/**/*.swift'
-        wos.platform = :watchos
-        wos.resource_bundle = {
-            "PianoAnalytics_watchOS" => ["Sources/PianoAnalytics/Resources/*.xcprivacy"]
-        }
-        wos.resource = 'Sources/PianoAnalytics/Resources/*.json'
-    end
-
-    s.subspec 'tvOS' do |tvos|
-        tvos.source_files = 'Sources/**/*.swift'
-        tvos.platform = :tvos
-        tvos.resource_bundle = {
-            "PianoAnalytics_tvOS" => ["Sources/PianoAnalytics/Resources/*.xcprivacy"]
-        }
-        tvos.resource = 'Sources/PianoAnalytics/Resources/*.json'
-    end
+    en
 end
