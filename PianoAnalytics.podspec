@@ -30,5 +30,5 @@ Pod::Spec.new do |s|
             "PianoAnalytics_appExtension" => ["Sources/PianoAnalytics/Resources/*.xcprivacy"]
         }
         appExt.resource = 'Sources/PianoAnalytics/Resources/*.json'
-    en
+    end
 end
