@@ -25,7 +25,11 @@
 
 import Foundation
 
-public let pa = PianoAnalytics.shared
+//public let pa = PianoAnalytics.shared
+
+@objc public class PianoAnalyticsWrapper: NSObject {
+    @objc public func pa() -> PianoAnalytics { return PianoAnalytics.shared }
+}
 
 public protocol PianoAnalyticsWorkProtocol {
     /// Called when raw data is available and customer want to override it before building
@@ -42,12 +46,18 @@ public protocol PianoAnalyticsWorkProtocol {
     func onBeforeSend(built: BuiltModel?, stored: [String: BuiltModel]?) -> Bool
 }
 
-public final class PianoAnalytics {
+
+
+@objc public final class PianoAnalytics: NSObject {
 
     // MARK: PUBLIC SECTION
     
     /// SDK version
     public static let sdkVersion = "3.1.7"
+    
+    @objc public func sendEvent(key: String) {
+        sendEvent(Event(key))
+    }
 
     /// Send event
     ///
