@@ -27,10 +27,6 @@ import Foundation
 
 public let pa = PianoAnalytics.shared
 
-@objc public class PianoAnalyticsWrapper: NSObject {
-    @objc public func pa() -> PianoAnalytics { return PianoAnalytics.shared }
-}
-
 public protocol PianoAnalyticsWorkProtocol {
     /// Called when raw data is available and customer want to override it before building
     ///
@@ -46,14 +42,15 @@ public protocol PianoAnalyticsWorkProtocol {
     func onBeforeSend(built: BuiltModel?, stored: [String: BuiltModel]?) -> Bool
 }
 
-
-
 @objc public final class PianoAnalytics: NSObject {
 
     // MARK: PUBLIC SECTION
+    @objc public static func getInstance() -> PianoAnalytics {
+        return sharedWithConfigurationFilePath(ConfigFile)
+    }
     
     /// SDK version
-    public static let sdkVersion = "3.1.7"
+    public static let sdkVersion = "3.1.8"
     
     @objc public func sendEvent(key: String) {
         sendEvent(Event(key))
@@ -441,7 +438,7 @@ public protocol PianoAnalyticsWorkProtocol {
     /// Specific init with custom location configuration file
     ///
     /// - Parameter configFileLocation: file path from resources folder
-    public static let sharedWithConfigurationFilePath: (String) -> PianoAnalytics = { configFileLocation in
+    @objc public static let sharedWithConfigurationFilePath: (String) -> PianoAnalytics = { configFileLocation in
         if _instance == nil {
             _instance = PianoAnalytics(configFileLocation: configFileLocation)
         }
