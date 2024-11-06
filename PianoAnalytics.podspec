@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.swift_versions = '5'
 
     s.subspec 'iOS' do |d|
-        d.source_files = 'Sources/**/*.{h,m,swift}
+        d.source_files = 'Sources/**/*.{h,m,swift}'
         d.platform = :ios
         d.resource_bundle = {
             "PianoAnalytics_iOS" => ["Sources/PianoAnalytics/Resources/*.xcprivacy"]
