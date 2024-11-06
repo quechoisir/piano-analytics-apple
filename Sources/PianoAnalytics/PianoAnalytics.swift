@@ -42,7 +42,8 @@ public protocol PianoAnalyticsWorkProtocol {
     func onBeforeSend(built: BuiltModel?, stored: [String: BuiltModel]?) -> Bool
 }
 
-@objc public final class PianoAnalytics: NSObject {
+@objcMembers
+public final class PianoAnalytics: NSObject {
 
     // MARK: PUBLIC SECTION
     @objc public static func getInstance() -> PianoAnalytics {
