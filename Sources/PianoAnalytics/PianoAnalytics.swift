@@ -25,8 +25,6 @@
 
 import Foundation
 
-public let pa = PianoAnalytics.shared
-
 public protocol PianoAnalyticsWorkProtocol {
     /// Called when raw data is available and customer want to override it before building
     ///
@@ -44,7 +42,7 @@ public protocol PianoAnalyticsWorkProtocol {
 
 @objcMembers
 public final class PianoAnalytics: NSObject {
-
+    
     // MARK: PUBLIC SECTION
     @objc public static func getInstance() -> PianoAnalytics {
         return sharedWithConfigurationFilePath(ConfigFile)
@@ -434,7 +432,7 @@ public final class PianoAnalytics: NSObject {
     private static var _instance: PianoAnalytics?
 
     /// Simple default init
-    public static let shared: PianoAnalytics = sharedWithConfigurationFilePath(ConfigFile)
+    @objc public static let shared: PianoAnalytics = sharedWithConfigurationFilePath(ConfigFile)
 
     /// Specific init with custom location configuration file
     ///
