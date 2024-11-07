@@ -12,6 +12,8 @@ Pod::Spec.new do |s|
     s.module_name = 'PianoAnalytics'
     s.ios.deployment_target = '12.0'
     s.swift_versions = '5'
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
     s.subspec 'iOS' do |d|
         d.source_files = 'Sources/**/*.{h,m,swift}'
